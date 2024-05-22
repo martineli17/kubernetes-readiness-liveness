@@ -10,10 +10,10 @@ export class HealthController {
 
     @Get("readiness")
     async readiness(@Res() response: Response) {
-        const ableToStart = await this._repository.getStartSettingsAsync();
-        console.log("READINESS: ", ableToStart);
+        const readiness = await this._repository.getReadinessSettingsAsync();
+        console.log("READINESS: ", readiness);
 
-        if (ableToStart)
+        if (readiness)
             response.status(200).json({ status: "success" });
         else
             response.status(400).json({ status: "failed" })
@@ -21,10 +21,10 @@ export class HealthController {
 
     @Get("liveness")
     async liveness(@Res() response: Response) {
-        const ableToKeep = await this._repository.getLiveSettingsAsync();
-        console.log("LIVENESS: ", ableToKeep);
+        const liveness = await this._repository.getLivessSettingsAsync();
+        console.log("LIVENESS: ", liveness);
 
-        if (ableToKeep)
+        if (liveness)
             response.status(200).json({ status: "success" });
         else
             response.status(400).json({ status: "failed" })
