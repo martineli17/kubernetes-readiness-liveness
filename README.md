@@ -47,10 +47,6 @@ Finalizando o build, pode ser feito o push para o Dockerhub através do seguinte
 Feito isso, no arquivo de [deployment](https://github.com/martineli17/kubernetes-readiness-liveness/blob/master/deployment.yml) do Kubernetes, é necessário informar qual o nome da imagem que foi definido no build acima, substituindo em `image: [NOME_DA_IMAGEM_GERADA]`. Além disso, é necessário alterar a vairável de ambiente responsável por definir o host do database, informando o IP do ambiente Kubernetes local (WSL): `name: DATABASE_HOST`.
 
 ## Executando a aplicação e validando o funcionamento
-Antes de iniciar a aplicação, é necessário popular a tabela com os dados iniciais:
-```sql
-
-```
 Para executar a aplicação, é necessário ter algum ambiente Kubernetes instalado na máquina.
 
 Com isso, no diretório do arquivo `deployment.yml`, é necessário executar o comando: `kubectl apply -f deployment.yml`. Ao finalizar o comando, os pods criados podem ser visualizados através: `kubectl get pods`.
