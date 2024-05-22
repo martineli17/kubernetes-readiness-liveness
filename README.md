@@ -1,5 +1,5 @@
 # Readiness e Liveness
-No contexto das aplicações atuais, é recomendado ter algum meio de verificar a saúde das mesmas, a fim de validar se elas estão áptas para realizar os processamentos necessários. Caso elas apresentem alguma falha, podemos atuar o mais breve possível.
+No contexto das aplicações atuais, é recomendado ter algum meio de verificar a saúde das mesmas, a fim de validar se elas estão aptas para realizar os processamentos necessários. Caso elas apresentem alguma falha, podemos atuar o mais breve possível.
 
 Quando utilizamos o ambiente Kubernetes para executar nossas aplicações através de containers, nos temos uma opção de implementar essa verificação de maneira fácil e automatizar o processo de recuperação, utilizando para isso as features de `readinessprobe` e `livenessprobe` disponibilizadas pela própria API do Kubernetes.
 
@@ -77,6 +77,6 @@ update settings set "liveness" = false, "readiness" = false;
 ![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/8057c3ff-28a7-444e-80ad-9224872c4029)
 
 ### Modificando o `liveness como true`
-> Agora com o `liveness` como true, o container a reinicialização não acontece mais. Parou na 5° reinicialização pois percebeu que o container está válido para continuar o processamento.
+> Agora com o `liveness` como true, a reinicialização do container não acontece mais. Parou na 5° reinicialização pois percebeu que o container está válido para continuar o processamento.
 
 ![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/b6b08438-37b1-40c3-9d3b-e017d9317c4e)
