@@ -67,23 +67,20 @@ update settings set "liveness" = false, "readiness" = false;
 ###  Testando o `readiness como false` 
 - Nota-se que o container não é defidamente criado com sucesso:
 
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/4bc0ccbe-2604-470e-bab9-3703a262dd4c)
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/77807134-dffa-4591-97d8-994b577b97a4)
+![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/73a509e6-2ba4-4b8a-a0e8-0e7966f3d20b)
 
 ### Modificando o `readiness como true`
 > Nota-se que o container agora é criado com sucesso
 
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/7409e9a4-6db8-4a38-9960-df37e0162a7f)
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/4e340281-4f28-414f-8460-100755076269)
+![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/797a2733-f343-41d4-aaba-068cbe8b8770)
+
 
 ### Testando o `liveness como false` 
 > Mesmo com o `readiness` como true, o container continua sendo reinicializado, pois a verificação do `liveness` falhou.
 
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/4668409f-536c-4b33-8c3a-6f7a3564ab7c)
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/4b2ac09b-7fc6-48e3-9897-5a61fc48c601)
+![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/8057c3ff-28a7-444e-80ad-9224872c4029)
 
 ### Modificando o `liveness como true`
 > Agora com o `liveness` como true, o container a reinicialização não acontece mais. Parou na 5° reinicialização pois percebeu que o container está válido para continuar o processamento.
 
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/e6e316e9-ea11-45c4-abe1-8ff98ab5fc8d)
-![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/b6d5fd28-a3e8-4f1f-9361-72bd815ec2ad)
+![image](https://github.com/martineli17/kubernetes-readiness-liveness/assets/50757499/b6b08438-37b1-40c3-9d3b-e017d9317c4e)
