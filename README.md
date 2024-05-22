@@ -1,7 +1,7 @@
 # Readiness e Liveness
 No contexto das aplicações atuais, é recomendado ter algum meio de verificar a saúde das mesmas, a fim de validar se elas estão áptas para realizar os processamentos necessários. Caso elas apresentem alguma falha, podemos atuar o mais breve possível.
 
-Quando utilizamos o ambiente Kubernetes para executar nossas aplicações através de containers, nos temos uma opção de implementar essa verificação de maneira fácil e automatizar o processo de recuperação, utilizando para isso as features de `readiness` e `liveness` disponibilizadas pela própria API do Kubernetes.
+Quando utilizamos o ambiente Kubernetes para executar nossas aplicações através de containers, nos temos uma opção de implementar essa verificação de maneira fácil e automatizar o processo de recuperação, utilizando para isso as features de `readinessprobe` e `livenessprobe` disponibilizadas pela própria API do Kubernetes.
 
 Antes de implementar cada uma dessas features, primeiro é necessário entender o cenário de uso de cada uma:
 - `Readiness`: é utilizada para checar se um container está ápto para começar a receber as requests de processamento. Por padrão, assim que um container é criado, o Kubernetes entende que ela já pode receber as solicitações de processamento. No entanto, há cenários que é preciso aguardar algum processamento inicial no startup da aplicação para que somente após isso ela esteja totalmete ápta para processar. Um exemplo disso pode ser a execução de migrations ou setup inicial de dados.
